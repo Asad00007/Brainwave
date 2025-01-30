@@ -160,7 +160,7 @@ function App() {
       />
       <div className="w-[1300px] max-w-full mx-auto px-4 ">
         <div className="relative flex items-center justify-center gap-2">
-          <div className="bg-[rgba(255,255,255,0.2)] h-[300px] w-[400px] md:h-[600px] md:w-[700px] shadow-[0px_0px_50px_rgba(255,255,255,0.1)] blur-3xl absolute -top-[200px] md:-top-[350px] rounded-full fades"></div>
+          <div className="bg-[rgba(255,255,255,0.2)] h-[300px] w-[300px] md:h-[600px] md:w-[700px] shadow-[0px_0px_50px_rgba(255,255,255,0.1)] blur-3xl absolute -top-[230px] md:-top-[350px] rounded-full fades"></div>
         </div>
         <nav className="flex items-center justify-between py-4 z-50">
           <Fade triggerOnce>
@@ -181,7 +181,7 @@ function App() {
             })}
           </ul>
 
-          <Fade triggerOnce delay={200}>
+          <Fade triggerOnce delay={200} className="hidden md:flex">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -191,7 +191,7 @@ function App() {
                 text="Get Started"
                 disabled={false}
                 speed={3}
-                className="custom-class border py-2 px-5 rounded-3xl text-xs md:text-[14px] bg-[#111111]"
+                className="custom-class border py-2 px-5 rounded-3xl text-xs md:text-[14px] bg-[#111111] sm:mx-auto "
               />
             </motion.button>
           </Fade>
@@ -212,11 +212,11 @@ function App() {
               />
             </Fade>
             <BlurText
-              text="THE GREAT NEVER SETTLE FOR LESS."
+              text="THE GREAT NEVER SETTLE FOR LESS"
               delay={150}
               animateBy="words"
               direction="top"
-              className="text-xl md:text-[45px] mb-8 "
+              className="text-xl md:text-[45px] mb-8 whitespace-nowrap"
             />
           </div>
         </section>
@@ -411,7 +411,7 @@ function App() {
           </GradientText>
         </Fade>
         {/* Add smoke effect and background */}
-        <Fade triggerOnce fraction={0.3} delay={100}>
+        <Fade triggerOnce fraction={0.2} delay={100}>
           <div className="grid grid-cols-1 @max-[900px]:grid-cols-1 @max-[1200px]:grid-cols-2 lg:grid-cols-3 gap-5">
             {pricing.map((item, index) => {
               return (
@@ -426,7 +426,7 @@ function App() {
                     <SiTarget className="text-2xl mb-2" />
                     <h2 className="text-2xl font-semibold my-3">{item.plan}</h2>
                     <p className="text-[14px] opacity-75">{item.desc}</p>
-                    <h1 className="text-3xl md:text-4xl my-6">
+                    <h1 className="text-2xl md:text-4xl my-6">
                       {item.price} {item?.month}
                     </h1>
                     <motion.button
@@ -444,7 +444,10 @@ function App() {
                     <div className="my-7 flex flex-col items-start gap-2">
                       {item.perks.map((items, index) => {
                         return (
-                          <div className="flex items-center gap-2" key={index}>
+                          <div
+                            className="flex items-center gap-2 text-[14px] md:text-base"
+                            key={index}
+                          >
                             <FaRegCircleCheck />
                             {items}
                           </div>
@@ -460,10 +463,10 @@ function App() {
       </div>
       {/* Contact Section */}
       <div
-        className="w-[1300px] max-w-full mx-auto px-5 @container my-10 scroll-mt-8"
+        className="w-[1300px] max-w-full mx-auto px-5  my-10 scroll-mt-8 overflow-hidden"
         id="contact"
       >
-        <Fade triggerOnce direction="left" fraction={0.3}>
+        <Fade triggerOnce direction="left" fraction={0.5}>
           <GradientText
             colors={["#808080", "#eae9e9", "#808080", "#eae9e9", "#808080"]}
             animationSpeed={3}
@@ -473,7 +476,7 @@ function App() {
             Get In Touch
           </GradientText>
         </Fade>
-        <Fade triggerOnce fraction={0.2} direction="up">
+        <Fade triggerOnce fraction={0.4} direction="up">
           <StarBorder
             as="button"
             className="custom-class flex-1 items-start hover:scale-[1.05] transition w-full"
