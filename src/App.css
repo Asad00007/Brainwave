@@ -1,0 +1,27 @@
+.minHeight{
+    min-height: calc(100vh - 140px);
+}
+@media screen and (max-width:768px) {
+    .minHeight{
+        min-height: calc(70vh - 85px);
+    }
+}
+
+.fades{
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 75%;
+    }
+}
+@theme {
+    --container-8xl: 1300px;
+  }
+
+  *{
+    scroll-behavior: smooth;
+}
