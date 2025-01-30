@@ -175,7 +175,13 @@ function App() {
             {links.map((item, index) => {
               return (
                 <Fade triggerOnce delay={index * 200} key={index}>
-                  <a href={`#${item}`}>{Capitalize(item)}</a>
+                  <a
+                    href={`#${item}`}
+                    className="relative inline-block px-1 text-transparent bg-gradient-to-r from-white via-white to-gray-400 bg-[length:200%_100%] bg-left transition-all duration-300 ease-in-out hover:bg-right hover:scale-[1.02] group bg-clip-text"
+                  >
+                    {Capitalize(item)}
+                    <span class="absolute bottom-[-3px] left-0 w-0 h-[3px] bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  </a>
                 </Fade>
               );
             })}
@@ -235,7 +241,7 @@ function App() {
       </div>
       {/* About Section */}
       <div
-        className="w-[1300px] max-w-full mx-auto px-5 flex flex-col gap-4 mt-10 mb-16 scroll-mt-9"
+        className="w-[1300px] max-w-full mx-auto px-5 flex flex-col gap-4 pt-10 pb-16 scroll-mt-9 overflow-hidden"
         id="about"
       >
         <Fade triggerOnce direction="left">
@@ -248,7 +254,7 @@ function App() {
             Who We Are
           </GradientText>
         </Fade>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-2 md:mb-0 overflow-hidden">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-2 md:mb-0 ">
           <div className="md:basis-1/2 space-y-5 md:space-y-10">
             <Fade triggerOnce direction="left" fraction={0.3}>
               <h4 className="text-base md:text-[18px] ">
@@ -320,8 +326,8 @@ function App() {
         } transition-all ease-in-out duration-500 `}
         id="services"
       >
-        <div className="w-[1300px] max-w-full mx-auto px-4 ">
-          <div className="flex justify-between gap-2 items-center">
+        <div className="w-[1300px] max-w-full mx-auto px-4">
+          <div className="flex justify-between gap-2 items-center overflow-hidden">
             <Fade triggerOnce direction="left">
               {servicesActive ? (
                 <GradientText
@@ -357,7 +363,7 @@ function App() {
             </Fade>
             <Fade triggerOnce direction="right">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 0.98 }}
                 whileTap={{ scale: 0.95 }}
                 whileDrag={{ scale: 0.9, rotate: 10 }}
                 className={`min-w-[50px] h-[50px] rounded-full ${
@@ -397,7 +403,7 @@ function App() {
       {/* Pricing Section */}
 
       <div
-        className="w-[1300px] max-w-full mx-auto px-5 @container my-10 scroll-mt-8"
+        className="w-[1300px] max-w-full mx-auto px-5 @container pb-5 scroll-mt-12 overflow-hidden"
         id="pricing"
       >
         <Fade triggerOnce direction="left">
@@ -463,7 +469,7 @@ function App() {
       </div>
       {/* Contact Section */}
       <div
-        className="w-[1300px] max-w-full mx-auto px-5  my-10 scroll-mt-8 overflow-hidden"
+        className="w-[1300px] max-w-full mx-auto px-5  mt-10 pb-10 scroll-mt-8 overflow-hidden"
         id="contact"
       >
         <Fade triggerOnce direction="left" fraction={0.5}>
@@ -479,7 +485,7 @@ function App() {
         <Fade triggerOnce fraction={0.4} direction="up">
           <StarBorder
             as="button"
-            className="custom-class flex-1 items-start hover:scale-[1.05] transition w-full"
+            className="custom-class flex-1 items-start hover:scale-[1.02] transition w-full"
             color="white"
             speed="5s"
           >
